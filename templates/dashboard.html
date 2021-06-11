@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<hr>
+<h1> welcome {{session["username"]}}</h1>
+<hr>
+
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Product</th>
+      <th scope="col">View Product</th>
+      <th scope="col">Creation Date</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for product in products  %}
+  <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.product}}</td>
+      <td><a href="/products/{{product.id}}" class="btn btn-outline-dark" type="submit">View Product</a></td>
+      <td>{{product.date}}</td>
+      <td><a href="/update/{{product.id}}" class="btn btn-outline-warning" type="submit">Update</a></td>
+      <td><a href="/delete/{{product.id}}" class="btn btn-outline-danger" type="submit">Delete</a></td>
+    </tr>
+  {% endfor %}
+    
+    </tbody>
+</table>
+
+<a href="/addproduct" class="btn btn-outline-success" type="submit">Add Product</a>
+{% endblock body %}
+

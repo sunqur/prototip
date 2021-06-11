@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% for product in products %}
+<main role="main" class="container">
+      <h1 class="mt-5">{{product.product}}</h1>
+      <p class="lead">{{product.sharing}}</p>
+      <p>{{product.features|safe}}</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Sentim</span>
+      </div>
+    </footer>
+{% endfor %}
+{% endblock body %}

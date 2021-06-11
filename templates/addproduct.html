@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+<hr>
+<h1> Add Product</h1>
+<hr>
+<center>
+<form method=post>
+  <dl>
+    {{ render_field(form.product, class="form-control") }}
+    {{ render_field(form.features, class="form-control") }}
+  </dl>
+  <p><button class="btn btn-outline-success" type="submit">Add</button>
+</form>
+</center>
+
+{% endblock body %}
